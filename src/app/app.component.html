@@ -1,0 +1,27 @@
+<ng-sidebar-container class="sidebar-container-migue">
+
+  <!-- A sidebar -->
+  <ng-sidebar #sidebar
+    [mode]="'slide'"
+    [dock]="'_dock'"
+    [dockedSize]="'50px'"
+    [sidebarClass]="'sidebar-migue'"
+    [closeOnClickOutside]="'_closeOnClickOutside'"
+    [keyClose]="'_keyClose'">
+    <p>Sidebar contents</p>
+    <a closeSidebar>Closes the sidebar</a>
+  </ng-sidebar>
+
+  <!-- Page content -->
+  <div ng-sidebar-content>
+    <button (click)="sidebar.open()">Open sidebar</button>
+    <h1>{{title}}</h1>
+    <nav>
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/heroes">Heroes</a>
+    </nav>
+    <router-outlet></router-outlet>
+    <app-messages></app-messages>
+  </div>
+
+</ng-sidebar-container>
