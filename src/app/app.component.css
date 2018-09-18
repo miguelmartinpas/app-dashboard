@@ -28,11 +28,11 @@ nav a.active {
   color: #039be5;
 }
 
-.sidebar-container-migue {
+.sidebar-container {
   position:inherit;
   background-color: red;
 
-  .sidebar-migue {
-    background-color: #f4f4f4;
+  .sidebar {
+    background-color: red;
   }
 }
