@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
-import { SidebarModule } from 'ng-sidebar';
+// import { SidebarModule } from 'ng-sidebar';
 
 import { AppComponent } from './app.component';
 import components from 'components/configureComponents';
 
 import { AppRoutingModule } from 'routes/app-routing.module';
+
+import {SuiModule} from 'ng2-semantic-ui';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -19,7 +21,8 @@ console.log('reducers', rootReducers);
   declarations: [AppComponent, ...components],
   imports: [
     BrowserModule,
-    SidebarModule.forRoot(),
+    // SidebarModule.forRoot(),
+    SuiModule,
     FormsModule,
     AppRoutingModule,
     StoreModule.forRoot(rootReducers),
