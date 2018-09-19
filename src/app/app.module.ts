@@ -10,6 +10,7 @@ import components from 'components/configureComponents';
 import { AppRoutingModule } from 'routes/app-routing.module';
 
 import {SuiModule} from 'ng2-semantic-ui';
+import { GridsterModule } from 'angular-gridster2';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -21,8 +22,8 @@ console.log('reducers', rootReducers);
   declarations: [AppComponent, ...components],
   imports: [
     BrowserModule,
-    // SidebarModule.forRoot(),
     SuiModule,
+    GridsterModule,
     FormsModule,
     AppRoutingModule,
     StoreModule.forRoot(rootReducers),

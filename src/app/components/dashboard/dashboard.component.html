@@ -5,16 +5,17 @@
       <h4>{{hero.name}}</h4>
     </div>
   </a>
+</div>
 
-  <ul>
-    <li>
-      ng-sidebar: https://github.com/arkon/ng-sidebar
-    </li>
-    <li>
-      https://material.angular.io/components/sidenav/examples
-    </li>
-    <li>
-      angular-gridster: https://github.com/ManifestWebDesign/angular-gridster
-    </li>
-  </ul>
+<div style="height:500px">
+  <gridster [options]="options">
+    <gridster-item [item]="item" *ngFor="let item of dashboard">
+      <div class="button-holder">
+        <div class="ui {{item.color}} inverted segment">
+          <h4 class="ui header">A header</h4>
+          <p>Te eum doming eirmod, nominati pertinacia</p>
+        </div>
+      </div>
+    </gridster-item>
+  </gridster>
 </div>

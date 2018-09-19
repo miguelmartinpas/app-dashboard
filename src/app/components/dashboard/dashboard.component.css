@@ -60,3 +60,16 @@ h4 {
     min-width: 60px;
   }
 }
+
+:host gridster {
+  background: white;
+}
+
+:host gridster /deep/ gridster-preview {
+  background: gray;
+  border-radius: 6px;
+}
+
+:host gridster /deep/ gridster-item {
+  border-radius: 6px;
+}

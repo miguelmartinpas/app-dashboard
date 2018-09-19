@@ -24,6 +24,7 @@
     "@ngrx/effects": "^6.1.0",
     "@ngrx/store": "^6.1.0",
     "@ngrx/store-devtools": "^6.1.0",
+    "angular-gridster2": "^6.0.10",
     "core-js": "^2.5.4",
     "ng2-semantic-ui": "^0.9.7",
     "rxjs": "^6.0.0-beta.2",

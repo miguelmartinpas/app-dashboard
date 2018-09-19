@@ -31,8 +31,14 @@
         </div>
       </div>
       <a class="item">Link</a>
-      <div class="item">
+      <div class="item ui secondary dropdown button" suiDropdown>
+        <!-- https://semantic-ui.com//images/wireframe/square-image.png -->
+        <!-- https://semantic-ui.com/images/avatar/large/elliot.jpg -->
         <img class="ui avatar image" src="https://semantic-ui.com/images/avatar/large/elliot.jpg"> Elliot
+        <i class="dropdown icon"></i>
+        <div class="menu" suiDropdownMenu>
+            <div class="item">Sign in</div>
+        </div>
       </div>
     </div>
 </div>
@@ -63,7 +69,6 @@
         <div class="ui basic segment">
             <h3 class="ui header">{{title}}</h3>
             <router-outlet></router-outlet>
-            <app-messages></app-messages>
         </div>
     </sui-sidebar-sibling>
 </sui-sidebar-container>
