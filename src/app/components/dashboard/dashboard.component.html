@@ -1,3 +1,14 @@
+<div style="height:800px">
+  <gridster [options]="options">
+    <gridster-item [item]="item" *ngFor="let item of dashboard">
+      <div class="ui {{item.color}} inverted segment" style="height:100%">
+        <h4 class="ui header">{{item.label || 'A header'}}</h4>
+        <p>Te eum doming eirmod, nominati pertinacia</p>
+      </div>
+    </gridster-item>
+  </gridster>
+</div>
+
 <h3>Top Heroes</h3>
 <div class="grid grid-pad">
   <a *ngFor="let hero of heroes" class="col-1-4" routerLink="/detail/{{hero.id}}">
@@ -5,17 +16,4 @@
       <h4>{{hero.name}}</h4>
     </div>
   </a>
-</div>
-
-<div style="height:500px">
-  <gridster [options]="options">
-    <gridster-item [item]="item" *ngFor="let item of dashboard">
-      <div class="button-holder">
-        <div class="ui {{item.color}} inverted segment">
-          <h4 class="ui header">A header</h4>
-          <p>Te eum doming eirmod, nominati pertinacia</p>
-        </div>
-      </div>
-    </gridster-item>
-  </gridster>
 </div>

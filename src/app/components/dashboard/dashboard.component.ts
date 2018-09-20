@@ -24,16 +24,16 @@ export class DashboardComponent implements OnInit {
       // https://github.com/tiberiuzuld/angular-gridster2/blob/master/src/app/sections/home/home.component.html
       gridType: GridType.Fit,
       compactType: CompactType.None,
-      margin: 10,
+      margin: 50,
       outerMargin: true,
       outerMarginTop: null,
       outerMarginRight: null,
       outerMarginBottom: null,
       outerMarginLeft: null,
       mobileBreakpoint: 640,
-      minCols: 1,
-      maxCols: 7,
-      minRows: 1,
+      minCols: 8,
+      maxCols: 8,
+      minRows: 5,
       maxRows: 5,
       maxItemCols: 7,
       minItemCols: 1,
@@ -74,46 +74,29 @@ export class DashboardComponent implements OnInit {
       scrollToNewItems: false
     };
 
-    /*
-
-https://semantic-ui.com/usage/theming.html
-@red            : #B03060;
-@orange         : #FE9A76;
-@yellow         : #FFD700;
-@olive          : #32CD32;
-@green          : #016936;
-@teal           : #008080;
-@blue           : #0E6EB8;
-@violet         : #EE82EE;
-@purple         : #B413EC;
-@pink           : #FF1493;
-@brown          : #A52A2A;
-@grey           : #A0A0A0;
-@black          : #000000;
-
-    */
-
     this.dashboard = [
       {cols: 2, rows: 1, y: 0, x: 0, color: 'purple'},
-      {cols: 2, rows: 2, y: 0, x: 2, hasContent: true},
-      {cols: 1, rows: 1, y: 0, x: 4},
-      {cols: 1, rows: 1, y: 2, x: 5},
-      {cols: 1, rows: 1, y: 1, x: 0},
-      {cols: 1, rows: 1, y: 1, x: 0},
-      {cols: 2, rows: 2, y: 3, x: 5, minItemRows: 2, minItemCols: 2, label: 'Min rows & cols = 2'},
-      {cols: 2, rows: 2, y: 2, x: 0, maxItemRows: 2, maxItemCols: 2, label: 'Max rows & cols = 2'},
-      {cols: 2, rows: 1, y: 2, x: 2, dragEnabled: true, resizeEnabled: true, label: 'Drag&Resize Enabled'},
-      {cols: 1, rows: 1, y: 2, x: 4, dragEnabled: false, resizeEnabled: false, label: 'Drag&Resize Disabled'},
-      {cols: 1, rows: 1, y: 2, x: 6}
+      {cols: 2, rows: 1, y: 0, x: 2, hasContent: true, color: 'orange'},
+      {cols: 2, rows: 1, y: 0, x: 4, label: 'Green box' color: 'green'},
+      {cols: 2, rows: 1, y: 0, x: 6, color: 'yellow'},
+      {cols: 2, rows: 2, y: 1, x: 0, color: 'brown'},
+      {cols: 2, rows: 1, y: 1, x: 2, color: 'grey'},
+      {cols: 2, rows: 2, y: 1, x: 4, minItemRows: 2, minItemCols: 2, label: 'Min rows & cols = 2', color: 'black'},
+      {cols: 1, rows: 1, y: 1, x: 6, maxItemRows: 2, maxItemCols: 2, label: 'Max rows & cols = 2', color: 'violet'},
+      {cols: 1, rows: 2, y: 1, x: 7, dragEnabled: true, resizeEnabled: true, label: 'Drag&Resize Enabled', color: 'olive'},
+      {cols: 3, rows: 1, y: 2, x: 0, dragEnabled: false, resizeEnabled: false, label: 'Drag&Resize Disabled', color: 'pink'},
+      {cols: 3, rows: 2, y: 2, x: 4, color: 'red'}
     ];
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('changes', changes);
   }
 
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes.slice(1, 5));
   }
-
-
 
   changedOptions() {
     if (this.options.api && this.options.api.optionsChanged) {
