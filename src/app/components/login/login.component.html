@@ -1,0 +1,31 @@
+<div class="header" *ngIf="modal.context.title">{{ modal.context.title }}</div>
+<div class="content">
+  <div class="ui middle aligned center aligned grid">
+    <div class="column">
+      <h2 class="ui blue image header">
+        <img class="ui avatar image" src="https://logo.clearbit.com/mapalsoftware.com">
+        <div class="content">
+          Sign in to your account
+        </div>
+      </h2>
+      <form class="ui large form">
+        <div class="ui stacked segment">
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" name="email" placeholder="E-mail address">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" placeholder="Password">
+            </div>
+          </div>
+          <div class="ui fluid large blue submit button">Login</div>
+        </div>
+        <div class="ui error message" *ngIf="modal.context.message">{{ modal.context.message }}</div>
+      </form>
+    </div>
+  </div>
+</div>

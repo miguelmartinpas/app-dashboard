@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
-// import { SidebarModule } from 'ng-sidebar';
-
 import { AppComponent } from './app.component';
 import components from 'components/configureComponents';
 
@@ -20,6 +18,8 @@ console.log('reducers', rootReducers);
 
 @NgModule({
   declarations: [AppComponent, ...components],
+  exports: [AppComponent, ...components],
+  entryComponents: [AppComponent, ...components],
   imports: [
     BrowserModule,
     SuiModule,

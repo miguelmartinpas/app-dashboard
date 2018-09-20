@@ -1,26 +1,26 @@
 <div class="ui blue inverted top attached menu">
-    <a class="item" (click)="sidebar.toggle()">
-        <i class="sidebar icon"></i> Menu
-    </a>
-    <a class="item" (click)="sidebar.toggle()">
-        App
-    </a>
-    <div class="item ui primary dropdown button" suiDropdown [(isOpen)]="isOpen" [isDisabled]="isDisabled">
-      <div class="text">Dropdown</div>
-      <i class="dropdown icon"></i>
-      <div class="menu" suiDropdownMenu>
-          <div class="item">Item 1</div>
-          <div class="disabled item">Disabled Item</div>
-          <div class="item" suiDropdown>
-              <i class="dropdown icon"></i>
-              Nested
-              <div class="menu" suiDropdownMenu>
-                  <div class="item">Sub-item 1</div>
-                  <div class="item">Sub-item 2</div>
-              </div>
-          </div>
-          <div class="item">Item 4</div>
-      </div>
+  <div class="item">
+    <img class="ui avatar image" src="https://logo.clearbit.com/mapalsoftware.com">
+  </div>
+  <a class="item" (click)="sidebar.toggle()">
+    <i class="sidebar icon large"></i>
+  </a>
+  <div class="item ui primary dropdown button" suiDropdown [(isOpen)]="isOpen" [isDisabled]="isDisabled">
+    <div class="text">Dropdown</div>
+    <i class="dropdown icon"></i>
+    <div class="menu" suiDropdownMenu>
+        <div class="item">Item 1</div>
+        <div class="disabled item">Disabled Item</div>
+        <div class="item" suiDropdown>
+            <i class="dropdown icon"></i>
+            Nested
+            <div class="menu" suiDropdownMenu>
+                <div class="item">Sub-item 1</div>
+                <div class="item">Sub-item 2</div>
+            </div>
+        </div>
+        <div class="item">Item 4</div>
+    </div>
   </div>
     <div class="right menu">
       <div class="item">
@@ -37,7 +37,7 @@
         <img class="ui avatar image" src="https://semantic-ui.com/images/avatar/large/elliot.jpg"> Elliot
         <i class="dropdown icon"></i>
         <div class="menu" suiDropdownMenu>
-            <div class="item">Sign in</div>
+            <div class="item" (click)="signIn()">Sign in</div>
         </div>
       </div>
     </div>

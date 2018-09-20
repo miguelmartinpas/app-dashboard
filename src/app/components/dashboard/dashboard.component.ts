@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from 'types/hero';
-import { HeroService }  from 'services/hero';
-import {CompactType, DisplayGrid, GridsterConfig, GridsterItem, GridType} from 'angular-gridster2';
+import { HeroService } from 'services/hero';
+import { CompactType, DisplayGrid, GridsterConfig, GridsterItem, GridType } from 'angular-gridster2';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +10,6 @@ import {CompactType, DisplayGrid, GridsterConfig, GridsterItem, GridType} from '
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
-
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
 
@@ -77,20 +76,16 @@ export class DashboardComponent implements OnInit {
     this.dashboard = [
       {cols: 2, rows: 1, y: 0, x: 0, color: 'purple'},
       {cols: 2, rows: 1, y: 0, x: 2, hasContent: true, color: 'orange'},
-      {cols: 2, rows: 1, y: 0, x: 4, label: 'Green box' color: 'green'},
+      {cols: 2, rows: 1, y: 0, x: 4, label: 'Green box', color: 'green'},
       {cols: 2, rows: 1, y: 0, x: 6, color: 'yellow'},
-      {cols: 2, rows: 2, y: 1, x: 0, color: 'brown'},
-      {cols: 2, rows: 1, y: 1, x: 2, color: 'grey'},
-      {cols: 2, rows: 2, y: 1, x: 4, minItemRows: 2, minItemCols: 2, label: 'Min rows & cols = 2', color: 'black'},
+      {cols: 4, rows: 2, y: 1, x: 0, color: 'brown'},
+      // {cols: 2, rows: 1, y: 1, x: 2, color: 'grey'},
+      {cols: 2, rows: 2, y: 1, x: 4, minItemRows: 2, minItemCols: 2, label: 'Min rows & cols = 2', color: 'teal'},
       {cols: 1, rows: 1, y: 1, x: 6, maxItemRows: 2, maxItemCols: 2, label: 'Max rows & cols = 2', color: 'violet'},
       {cols: 1, rows: 2, y: 1, x: 7, dragEnabled: true, resizeEnabled: true, label: 'Drag&Resize Enabled', color: 'olive'},
       {cols: 3, rows: 1, y: 2, x: 0, dragEnabled: false, resizeEnabled: false, label: 'Drag&Resize Disabled', color: 'pink'},
       {cols: 3, rows: 2, y: 2, x: 4, color: 'red'}
     ];
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('changes', changes);
   }
 
   getHeroes(): void {
