@@ -12,6 +12,9 @@ export class AppComponent {
   constructor(public modalService: SuiModalService) {}
 
   public signIn(): void {
-    console.log('hola', this.modalService.open(new LoginModal()));
+    this.modalService
+      .open(new LoginModal())
+      .onApprove((data: Object) => alert('User has accepted.', data))
+      .onDeny(() => alert('User has denied.'));
   }
 }

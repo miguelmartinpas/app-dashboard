@@ -14,12 +14,19 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import rootReducers from 'store/reducers';
 
-console.log('reducers', rootReducers);
+import firebaseConfig from '../../configs/firebase.config.js';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+// console.log('reducers', rootReducers);
+
+// console.log('app.module.ts', [...components]);
 
 @NgModule({
   declarations: [AppComponent, ...components],
   exports: [AppComponent, ...components],
-  entryComponents: [AppComponent, ...components],
+  entryComponents: [AppComponent, ...components].filter(c => c),
   imports: [
     BrowserModule,
     SuiModule,
@@ -27,6 +34,9 @@ console.log('reducers', rootReducers);
     FormsModule,
     AppRoutingModule,
     StoreModule.forRoot(rootReducers),
+    AngularFireModule.initializeApp(firebaseConfig.database),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     // Note that you must instrument after importing StoreModule
     StoreDevtoolsModule.instrument({
       name: 'NgRx Book Store App',
