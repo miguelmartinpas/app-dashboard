@@ -23,6 +23,23 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // console.log('app.module.ts', [...components]);
 
+/*
+https://blog.realworldfullstack.io/real-world-angular-part-5-light-my-fire-34b0bcb351a8
+//category.service.ts
+...
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+...
+
+export class CategoryService {
+  constructor(private af: AngularFire) {
+  }
+  getCategories(): Observable<Category[]> {
+    return this.af.database.list('/categories');
+  }
+}
+
+*/
+
 @NgModule({
   declarations: [AppComponent, ...components],
   exports: [AppComponent, ...components],
@@ -43,7 +60,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
       maxAge: 10
     }),
   ],
-  providers: [],
+  providers: [], // services???
   bootstrap: [AppComponent]
 })
 export class AppModule { }

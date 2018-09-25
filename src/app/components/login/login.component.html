@@ -1,4 +1,3 @@
-<div class="header" *ngIf="modal.context.title">{{ modal.context.title }}</div>
 <div class="content">
   <div class="ui middle aligned center aligned grid">
     <div class="column">
@@ -9,22 +8,38 @@
         </div>
       </h2>
       <form class="ui large form">
-        <div class="ui stacked segment">
+        <div class="ui segment">
           <div class="field">
             <div class="ui left icon input">
               <i class="user icon"></i>
-              <input type="text" name="email" placeholder="E-mail address">
+              <input type="text" name="email" placeholder="E-mail address" [(ngModel)]="modal.context.username">
             </div>
           </div>
           <div class="field">
             <div class="ui left icon input">
               <i class="lock icon"></i>
-              <input type="password" name="password" placeholder="Password">
+              <input type="password" name="password" placeholder="Password" [(ngModel)]="modal.context.password">
             </div>
           </div>
-          <div class="ui fluid large blue submit button">Login</div>
+          <div class="ui buttons">
+            <button class="ui button" (click)="onUserPasswordClick()">Login</button>
+            <div class="or"></div>
+            <button class="ui facebook button" (click)="onFacebookClick()">
+              <i class="facebook icon"></i>
+              Facebook
+            </button>
+            <div class="or"></div>
+            <button class="ui twitter button" (click)="onTwitterClick()">
+              <i class="twitter icon"></i>
+              Twitter
+            </button>
+            <div class="or"></div>
+            <button class="ui google plus button" (click)="onGoogleClick()">
+              <i class="google plus icon"></i>
+              Google Plus
+            </button>
+          </div>
         </div>
-        <div class="ui error message" *ngIf="modal.context.message">{{ modal.context.message }}</div>
       </form>
     </div>
   </div>

@@ -2,7 +2,7 @@
   <div class="item">
     <img class="ui avatar image" src="https://logo.clearbit.com/mapalsoftware.com">
   </div>
-  <a class="item" (click)="sidebar.toggle()">
+  <a *ngIf="authService.isSignedIn()" class="item" (click)="sidebar.toggle()">
     <i class="sidebar icon large"></i>
   </a>
   <div class="item ui primary dropdown button" suiDropdown [(isOpen)]="isOpen" [isDisabled]="isDisabled">
@@ -34,10 +34,13 @@
       <div class="item ui secondary dropdown button" suiDropdown>
         <!-- https://semantic-ui.com//images/wireframe/square-image.png -->
         <!-- https://semantic-ui.com/images/avatar/large/elliot.jpg -->
-        <img class="ui avatar image" src="https://semantic-ui.com/images/avatar/large/elliot.jpg"> Elliot
+        <i *ngIf="!authService.isSignedIn()" class="big user circle outline icon"></i>
+        <img *ngIf="authService.isSignedIn() && userService.getPhotoUrl()" class="ui avatar image" src={{userService.getPhotoUrl()}}>
+        <div *ngIf="authService.isSignedIn()"> {{ userService.getDisplayName() }}</div>
         <i class="dropdown icon"></i>
         <div class="menu" suiDropdownMenu>
-            <div class="item" (click)="signIn()">Sign in</div>
+            <div *ngIf="!authService.isSignedIn()" class="item" (click)="authService.modalSignIn()">Sign in</div>
+            <div *ngIf="authService.isSignedIn()" class="item" (click)="authService.signOut()">Sign out</div>
         </div>
       </div>
     </div>
