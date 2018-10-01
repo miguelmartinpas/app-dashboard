@@ -3,13 +3,15 @@ import { HeroDetailComponent } from 'components/hero-detail/hero-detail.componen
 import { MessagesComponent } from 'components/messages/messages.component';
 import { DashboardComponent } from 'components/dashboard/dashboard.component';
 import { LoginModalComponent } from 'components/login/login.component';
+import { PermissionsComponent } from 'components/permissions/permissions.component';
 
 const components: Array<any> = [
   HeroesComponent,
   HeroDetailComponent,
   MessagesComponent,
   DashboardComponent,
-  LoginModalComponent
+  LoginModalComponent,
+  PermissionsComponent
 ];
 
 export default components;

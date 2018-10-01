@@ -1,7 +1,9 @@
 export class User {
-  id: string;
+  uid: string;
   email: string;
-  name: string;
-  first_name: string;
-  last_name: string;
+  username: string;
+  displayName: string;
+  photoURL: string;
+  roles: Array<string>;
+  permissions?: Array<string>;
 }
