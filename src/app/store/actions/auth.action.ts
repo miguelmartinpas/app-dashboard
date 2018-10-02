@@ -1,5 +1,4 @@
 import { Action } from '@ngrx/store';
-// import User from 'store/models/user.model';
 
 export enum AuthActionTypes {
   LOAD_PERMISSIONS_STARTED = '[App Dashboard] Permissions Started',

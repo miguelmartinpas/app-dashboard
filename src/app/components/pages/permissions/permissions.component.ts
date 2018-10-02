@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'types/user';
+import { User } from 'types';
 
 class Permission {
   id: string;

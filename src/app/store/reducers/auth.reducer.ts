@@ -1,9 +1,9 @@
 import { fromJS } from 'immutable';
-import { Auth, AuthActionTypes } from 'store/actions/auth.action';
+import { AuthActionTypes } from 'store/actions/auth.action';
 // import NavigationService from 'services/navigation';
 
 const initialState = fromJS({
-  permissions: {}, //NavigationService.getSignOutMenu()
+  permissions: {}, // NavigationService.getSignOutMenu()
   user: null,
   authenticated: false
 });

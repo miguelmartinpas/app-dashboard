@@ -1,4 +1,4 @@
-import Walk from 'store/models/walk.model';
+import { Walk } from 'store/models/walk.model';
 
 // States
 export default interface AppState {

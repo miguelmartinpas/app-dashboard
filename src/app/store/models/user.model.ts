@@ -1,7 +1,9 @@
-export default interface User {
+export interface User {
   uid: string;
   email: string;
-  name: string;
+  username: string;
   displayName: string;
   photoURL: string;
+  roles: Array<string>;
+  permissions?: Array<string>;
 }

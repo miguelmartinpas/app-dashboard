@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import User from 'store/models/user.model';
+import { User } from 'store/models/user.model';
 
 export enum UserActionTypes {
   USER_REQUEST = '[App Dashboard] User Request',

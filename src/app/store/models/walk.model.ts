@@ -1,4 +1,4 @@
-export default interface Walk {
+export interface Walk {
   date: Date;
   distance: number;
 }

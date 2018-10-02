@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import Walk from 'store/models/walk.model';
+import { Walk } from 'store/models/walk.model';
 
 export enum WalkActionTypes {
   WALK_REQUEST = '[My Feature] Walk Request',
