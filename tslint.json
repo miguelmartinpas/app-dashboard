@@ -21,10 +21,10 @@
       "rxjs/Rx"
     ],
     "import-spacing": true,
-    "indent": [
-      true,
-      "spaces"
-    ],
+    "indent": ["error", 2, {
+      "SwitchCase": 1,
+      "ignoreComments": true
+    }],
     "interface-over-type-literal": true,
     "label-position": true,
     "max-line-length": [
@@ -127,6 +127,17 @@
     "component-class-suffix": true,
     "directive-class-suffix": true,
     "comma-dangle": ["error", "never"],
-    "max-len": ["error", 150]
+    "max-len": ["error", 150],
+    "import/no-unresolved": ["error", { "caseSensitive": false }],
+    "no-console": ["warn", { "allow": ["warn"] }],
+    "arrow-return-shorthand": [true, "multiline"],
+    "no-param-reassign": ["error", { "props": false }],
+    "restrict-plus-operands": true,
+    "func-names": ["error", "always"],
+    "no-for-in-array": true,
+    "no-consecutive-blank-lines": [true, 2],
+    "no-irregular-whitespace": true,
+    "object-literal-shorthand": [true, "always"],
+    "semicolon": [true, "always"]
   }
 }

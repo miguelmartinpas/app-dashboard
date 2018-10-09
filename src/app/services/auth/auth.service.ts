@@ -76,25 +76,18 @@ export class AuthService {
     });
   }
 
-  signInWith = (provider = null) => {
-    return this.firebaseAuth.auth.signInWithPopup(provider).then((result) => {
+  signInWith = (provider = null) =>
+    this.firebaseAuth.auth.signInWithPopup(provider).then((result) => {
       console.log('signInWith', provider, result);
     }).catch((error) => {
       console.log('>provider error>', provider, error);
-    });
-  }
+    })
 
-  signInWithTwitter = () => {
-    return this.signInWith(new firebase.auth.TwitterAuthProvider());
-  }
+  signInWithTwitter = () => this.signInWith(new firebase.auth.TwitterAuthProvider());
 
-  signInWithFacebook = () => {
-    return this.signInWith(new firebase.auth.FacebookAuthProvider());
-  }
+  signInWithFacebook = () => this.signInWith(new firebase.auth.FacebookAuthProvider());
 
-  signInWithGoogle = () => {
-    return this.signInWith(new firebase.auth.GoogleAuthProvider());
-  }
+  signInWithGoogle = () => this.signInWith(new firebase.auth.GoogleAuthProvider());
 
   isSignedIn = () => {
     if (this.userDetails == null ) {

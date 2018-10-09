@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { User } from 'store/models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,20 +27,15 @@ export class UserService {
     );
   }
 
-  private parseFirebaseUser = () => {
-    return Object.keys(this.userDetails)
+  private parseFirebaseUser = () =>
+    Object.keys(this.userDetails)
       .filter(key => key.length > 2 && !key.startsWith('_'))
       .reduce((acc, current) => {
         acc[current] = this.userDetails[current];
         return acc;
-      } , {});
-  }
+      } , {})
 
-  public getDisplayName = (): string => {
-    return this.provider ? this.provider.displayName || this.provider.email : '';
-  }
+  public getDisplayName = (): string => this.provider ? this.provider.displayName || this.provider.email : '';
 
-  public getPhotoUrl = (): string => {
-    return this.provider ? this.provider.photoURL : '';
-  }
+  public getPhotoUrl = (): string => this.provider ? this.provider.photoURL : '';
 }

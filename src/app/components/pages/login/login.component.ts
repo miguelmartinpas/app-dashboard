@@ -17,9 +17,7 @@ interface ILoginModalContext {
 export class LoginModalComponent {
   constructor(public modal: SuiModal<ILoginModalContext, Object, Object>) {}
 
-  onUserPasswordClick = () => {
-    return this.modal.approve(this.modal.context);
-  }
+  onUserPasswordClick = () => this.modal.approve(this.modal.context);
 
   onTwitterClick = () => {
     this.modal.context.type = 'twitter';

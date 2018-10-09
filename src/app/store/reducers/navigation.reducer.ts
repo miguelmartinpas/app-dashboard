@@ -3,7 +3,7 @@ import { NavigationActionTypes } from 'store/actions/navigation.action';
 // import NavigationService from 'services/navigation';
 
 const initialState = fromJS({
-  menu: [] //NavigationService.getSignOutMenu()
+  menu: [] // NavigationService.getSignOutMenu()
 });
 
 export const navigationReducer = (state = initialState, action) => {

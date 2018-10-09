@@ -1,0 +1,102 @@
+{
+  "auth" : {
+    "permissions" : [ {
+      "description" : "setting read permission",
+      "id" : "setting:setting:read",
+      "name" : "setting:setting:read"
+    }, {
+      "description" : "setting write permission",
+      "id" : "setting:setting:write",
+      "name" : "setting:setting:write"
+    }, {
+      "description" : "dashboard read permission",
+      "id" : "dashboard:dashboard:read",
+      "name" : "dashboard:dashboard:read"
+    }, {
+      "description" : "dashboard write permission",
+      "id" : "dashboard:dashboard:write",
+      "name" : "dashboard:dashboard:write"
+    }, {
+      "description" : "heroes browse read permission",
+      "id" : "heroes:browse:read",
+      "name" : "heroes:browse:read"
+    }, {
+      "description" : "heroes browse write permission",
+      "id" : "heroes:browse:write",
+      "name" : "heroes:browse:write"
+    }, {
+      "description" : "heroes edit read permission",
+      "id" : "heroes:edit:read",
+      "name" : "heroes:edit:read"
+    }, {
+      "description" : "heroes edit write permission",
+      "id" : "heroes:edit:write",
+      "name" : "heroes:edit:write"
+    } ],
+    "roles" : [ {
+      "description" : "Editor Rol",
+      "icon" : "user",
+      "id" : "editor",
+      "name" : "Editor",
+      "permissions" : [ "dashboard:dashboard:read", "heroes:browse:read", "heroes:edit:read" ]
+    }, {
+      "description" : "GEP Admin Rol",
+      "icon" : "heartbeat",
+      "id" : "gepadmin",
+      "name" : "EGP Admin",
+      "permissions" : [ "dashboard:dashboard:read", "heroes:browse:read", "heroes:edit:read", "heroes:browse:write", "heroes:edit:write" ]
+    }, {
+      "description" : "Setting rol",
+      "icon" : "wrench",
+      "id" : "setting",
+      "name" : "Setting",
+      "permissions" : [ "dashboard:dashboard:read", "setting:setting:read", "setting:setting:write" ]
+    } ]
+  },
+  "setting" : {
+    "login" : {
+      "values" : [
+        {
+          "name" : "Google",
+          "type" : "boolean",
+          "value" : true,
+          "locked" : false,
+          "visible" : true
+        }, {
+          "name" : "Facebook",
+          "type" : "boolean",
+          "value" : true,
+          "locked" : false,
+          "visible" : true
+        }, {
+          "name" : "Password",
+          "type" : "boolean",
+          "value" : true,
+          "locked" : false,
+          "visible" : true
+        }, {
+          "name" : "Twitter",
+          "type" : "boolean",
+          "value" : false,
+          "locked" : false,
+          "visible" : true
+        }
+      ],
+      "locked" : false,
+      "visible" : true
+    },
+    "permissions" : {
+      "values" : [
+        {
+          "name" : "Dashboard read permission by default",
+          "type" : "string",
+          "value" : "dashboard:dashboard:read",
+          "locked" : true,
+          "visible" : true
+        }
+      ],
+      "locked" : false,
+      "visible" : true
+    }
+  }
+}
