@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { SuiModalService } from 'ng2-semantic-ui';
 import { LoginModal } from 'components/pages/login/login.component';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -7,7 +7,6 @@ import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 // import Auth from 'store/models/auth.model';
 // https://itnext.io/step-by-step-complete-firebase-authentication-in-angular-2-97ca73b8eb32
-import { MessageService } from 'services/message';
 
 type AuthType = 'password' | 'twitter' | 'facebook' | 'google';
 
@@ -26,11 +25,10 @@ export class AuthService {
 
   constructor(
     private modalService: SuiModalService,
-    private messageService: MessageService,
     private firebaseAuth: AngularFireAuth,
     private router: Router
   ) {
-    this.user = firebaseAuth.authState;
+    this.user = this.firebaseAuth.authState;
 
     this.user.subscribe(
       (user) => {

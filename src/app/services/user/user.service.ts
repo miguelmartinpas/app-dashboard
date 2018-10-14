@@ -12,7 +12,7 @@ export class UserService {
   private provider: any;
 
   constructor(private firebaseAuth: AngularFireAuth) {
-    this.user = firebaseAuth.authState;
+    this.user = this.firebaseAuth.authState;
 
     this.user.subscribe(
       (user) => {

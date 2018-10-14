@@ -1,5 +1,4 @@
 import { Walk } from 'store/models/walk.model';
-import { Action } from '@ngrx/store';
 import { WalkActionTypes } from 'store/actions/walk.action';
 
 export const addWalkReducer = (state: Walk[] = [], action) =>  {

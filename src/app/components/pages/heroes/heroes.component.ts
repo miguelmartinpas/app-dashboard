@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Hero } from 'types';
 import { HeroService } from 'services/hero';
-import { MessageService } from 'services/message';
 
 import AppState from 'store/appState';
-import { Walk } from 'types';
 import { Store } from '@ngrx/store';
 
 import { WalkRequestAction } from 'store/actions/walk.action';

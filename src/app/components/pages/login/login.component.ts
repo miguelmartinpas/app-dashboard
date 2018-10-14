@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SuiModal, ComponentModalConfig, ModalSize } from 'ng2-semantic-ui';
 
 // https://github.com/edcarroll/ng2-semantic-ui/blob/master/demo/src/app/modals/alert.modal.ts

@@ -138,6 +138,7 @@
     "no-consecutive-blank-lines": [true, 2],
     "no-irregular-whitespace": true,
     "object-literal-shorthand": [true, "always"],
-    "semicolon": [true, "always"]
+    "semicolon": [true, "always"],
+    "no-empty": true
   }
 }
