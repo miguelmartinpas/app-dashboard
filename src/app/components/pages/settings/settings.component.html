@@ -1,0 +1,22 @@
+<sui-tabset *ngIf="getGroups().length > 0">
+  <div class="ui secondary menu">
+    <a *ngFor="let group of getGroups()" class="item" suiTabHeader="{{group}}">{{group | uppercase}}</a>
+  </div>
+  <div *ngFor="let group of getGroups()" class="ui segment" suiTabContent="{{group}}">
+    {{setting[group].values | json}}
+    <div *ngIf="setting[group].values" class="ui form">
+      <div *ngFor="let value of setting[group].values" class="grouped fields">
+        <div class="ui field">
+          <p><strong>{{value.name}}</strong></p>
+          <sui-select
+            class="selection"
+            [(ngModel)]="value.value"
+          >
+            <sui-select-option value="false"></sui-select-option>
+            <sui-select-option value="true"></sui-select-option>
+          </sui-select>
+        </div>
+      </div>
+    </div>
+  </div>
+<sui-tabset>

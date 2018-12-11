@@ -132,4 +132,9 @@ export class PermissionsComponent implements OnInit {
     return hasRol.length > 0;
   }
 
+  trashClick = ($event) => {
+    $event.stopPropagation();
+    console.log('hello');
+  }
+
 }

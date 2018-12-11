@@ -23,16 +23,5 @@ export class AppComponent {
     this.apiService = apiService;
     this.authService = authService;
     this.userService = userService;
-    // https://www.uno-de-piera.com/aplicacion-angular-6-angularfire/
-    // https://github.com/angular/angularfire2/blob/master/docs/rtdb/lists.md
-    this.apiService.get('setting').snapshotChanges(['child_changed'])
-      .subscribe(actions => {
-        let setting = {};
-        actions.forEach(action => {
-          setting = { ...setting, [action.key]: action.payload.val() };
-        });
-        this.setting = setting;
-        console.log('setting', this.setting);
-      });
   }
 }

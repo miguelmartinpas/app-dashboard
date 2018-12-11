@@ -4,6 +4,7 @@ import { MessagesComponent } from 'components/pages/messages/messages.component'
 import { DashboardComponent } from 'components/pages/dashboard/dashboard.component';
 import { LoginModalComponent } from 'components/pages/login/login.component';
 import { PermissionsComponent } from 'components/pages/permissions/permissions.component';
+import { SettingsComponent } from 'components/pages/settings/settings.component';
 
 export const pages = {
   heroes: HeroesComponent,
@@ -11,7 +12,8 @@ export const pages = {
   message: MessagesComponent,
   dashboard: DashboardComponent,
   loginModal: LoginModalComponent,
-  permissions: PermissionsComponent
+  permissions: PermissionsComponent,
+  settings: SettingsComponent
 };
 
 export default Object.keys(pages).map(page => pages[page]);

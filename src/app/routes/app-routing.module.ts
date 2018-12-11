@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: pages.dashboard },
   { path: 'permissions', component: pages.permissions },
+  { path: 'settings', component: pages.settings },
   { path: 'heroes', component: pages.heroes },
   { path: 'detail/:id', component: pages.heroDetail }
   // { path: '**', component: PageNotFoundComponent }

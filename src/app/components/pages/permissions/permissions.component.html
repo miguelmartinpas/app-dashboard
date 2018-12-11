@@ -61,11 +61,8 @@
           <td *ngFor="let permision of permissions"
             class="center aligned"
             [ngClass]="(hasRolPermission(rol.id, permision.id) ? 'positive' : 'negative')">
-            <div class="ui segment">
-              <div class="ui fitted toggle checkbox">
-                <input type="checkbox" checked="(hasRolPermission(rol.id, permision.id)) ? 'selected' : ''">
-                <label></label>
-              </div>
+            <div class="ui toggle checkbox">
+              <sui-checkbox class="slider" checked="hasRolPermission(rol.id, permision.id)"></sui-checkbox>
             </div>
           </td>
         </tr>
