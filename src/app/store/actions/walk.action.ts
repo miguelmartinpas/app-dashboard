@@ -9,7 +9,7 @@ export enum WalkActionTypes {
 
 export class WalkRequestAction implements Action {
   readonly type = WalkActionTypes.WALK_REQUEST;
-  constructor(public payload: { date: Date; distance: number }) {}
+  constructor(public payload: { date: Date; distance: number; games: number; }) {}
 }
 
 export class WalkFailureAction implements Action {

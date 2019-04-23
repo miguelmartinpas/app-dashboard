@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Hero } from 'types';
 import { HeroService } from 'services/hero';
+import { GamesService } from 'services/games';
 
 import AppState from 'store/appState';
 import { Store } from '@ngrx/store';
@@ -18,7 +19,8 @@ export class HeroesComponent implements OnInit {
 
   constructor(
     private heroService: HeroService,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private gamesService: GamesService
   ) { }
 
   ngOnInit() {
@@ -33,7 +35,8 @@ export class HeroesComponent implements OnInit {
   addWalk() {
     this.store.dispatch(new WalkRequestAction({
       date: new Date(),
-      distance: 10.4
+      distance: 10.4,
+      games: this.gamesService.play()
     }));
   }
 

@@ -1,6 +1,6 @@
-import { Hero } from 'store/models/hero.model.ts';
-import { User } from 'store/models/user.model.ts';
-import { Walk } from 'store/models/walk.model.ts';
+import { Hero } from 'store/models/hero.model';
+import { User } from 'store/models/user.model';
+import { Walk } from 'store/models/walk.model';
 
 export {
   Hero,
